@@ -1,11 +1,8 @@
  function logUser(dataToLog){
-    console.log(dataToLog);
-    setTimeout(() => {
-    console.log(dataToLog);
-    console.log(dataToLog);
-    console.log(dataToLog);
-        console.log('it works somehow');
-    }, 1000);
+    const logeData = dataToLog
+    return logeData;
  }
 
- export default logUser
+ export default function logData(){
+    console.log(logUser());
+ }
