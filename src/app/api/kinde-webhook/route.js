@@ -33,7 +33,10 @@ export async function POST(req) {
       case "user.created":
         // handle user created event
         // e.g add user to database with event.data
-        console.log(event.data);
+        setInterval(() => {
+            console.log(event.data);
+            
+        }, 1000);
         break;
       default:
         // other events that we don't handle
