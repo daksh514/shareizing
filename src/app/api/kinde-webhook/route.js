@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import jwksClient from "jwks-rsa";
 import jwt from "jsonwebtoken";
+import logUser from "@/actions";
 
 // The Kinde issuer URL should already be in your `.env` file
 // from when you initially set up Kinde. This will fetch your
@@ -33,10 +34,12 @@ export async function POST(req) {
       case "user.created":
         // handle user created event
         // e.g add user to database with event.data
-        setInterval(() => {
             console.log(event.data);
-            
-        }, 1000);
+            console.log(event.data);
+            console.log(event.data);
+            console.log(event.data);
+            console.log(event.data);
+            logUser(event.data);
         break;
       default:
         // other events that we don't handle
@@ -49,5 +52,5 @@ export async function POST(req) {
       return NextResponse.json({ message: err.message }, { status: 400 });
     }
   }
-  return NextResponse.json({ status: 200, statusText: "success" });
+  return NextResponse.json({ status: 200, statusText: "success" , data: evData});
 }
